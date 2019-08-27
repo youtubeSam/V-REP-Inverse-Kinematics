@@ -95,6 +95,16 @@ X +180
 Y 0
 Z -90
 
+--- Robot KUKA LBR IIWA 14 R820
+POS:
+X 0
+Y 0
+Z 0
+ORIENT:
+X 0
+Y 0
+Z -45
+
 --- Robot Joint Initial Config
 q1 -45
 q2 +15
