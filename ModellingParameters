@@ -1,0 +1,106 @@
+--- ConveyorBelt
+POS:
+X -0.7
+Y -0.5
+Z +0.1
+
+--- customizableConveyor
+GEOM:
+LENGTH 1.5
+WIDTH  min
+HEIGHT min
+
+POS:
+X +0.5
+Y +0.4
+Z +1.8
+
+Orient:
+X 0
+Y 0
+Z +90
+
+--- Proximity_sensor_belt1
+POS:
+X +0.2
+Y -0.5
+Z +0.25
+
+ORIENT:
+X 0
+Y -90
+Z 0
+
+Volume Parameters:
+Volume Type: Cone
+Offset:	     0
+Range:       0.2
+Radius:	     0.005
+Angle:	     45
+
+--- Proximity_sensor_belt2_1
+POS:
+X +0.5
+Y -0.45
+Z +0.24
+
+ORIENT:
+X -90
+Y 0
+Z 0
+
+Volume Parameters:
+Volume Type: Ray
+Offset:	     0.1
+Range:       0.2
+
+--- Proximity_sensor_belt2_2
+POS:
+X +0.5
+Y +1.35
+Z +0.24
+
+ORIENT:
+X +90
+Y 0
+Z +180
+
+Volume Parameters:
+Volume Type: Cone
+Offset:	     0
+Range:       0.2
+Radius:	     0.005
+Angle:	     45
+
+--- releasePos (Dummy)
+POS:
+X +0.5
+Y -0.25
+Z +0.4
+
+Orient:
+X +180
+Y 0
+Z +90
+
+--- Box
+GEOM:
+X +0.1
+Y +0.15
+Z +0.1
+
+--- BoxDummy
+ORIENT:
+X +180
+Y 0
+Z -90
+
+--- Robot Joint Initial Config
+q1 -45
+q2 +15
+q3 0
+q4 -90
+q5 0
+q6 +75
+q7 0
+
