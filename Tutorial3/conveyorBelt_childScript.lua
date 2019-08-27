@@ -27,7 +27,7 @@ function sysCall_init()
 
     -- Insert the first box during initializiation
     insertBox()
--------
+
     -- Get handles and postions of dummies
     targetDummy = sim.getObjectHandle("Target")
     idlePos = sim.getObjectPosition(targetDummy,-1)
@@ -101,14 +101,14 @@ function sysCall_sensing()
             deltaTime = sim.getSimulationTime()-T_last_inserted
             hasStopped = true
 
-            -- TUT2
-            --[[
+	    -- Generate new pickupPath
             updatePickupPath(boxDummyList[1])
+	    -- Remove first object and dummy handle from table
             objs = removeFirstObject()
+	    -- Set pickupDummy-handle in robot script
             sim.setScriptVariable("pickupDummy",robotScriptHandle,objs[2])
+	    -- Set a signal such that robot knows that object is available
             sim.setIntegerSignal("objectAvailable",1)
-            ]]--
-
         end
     end
 
@@ -176,7 +176,7 @@ function insertBox()
     end
     
 end
----- TUT3
+
 function createPath(name,startPoint,startOrient,endPoint,endOrient)
     -- Create Path Object
     local path = sim.createPath(1)
@@ -190,15 +190,21 @@ function createPath(name,startPoint,startOrient,endPoint,endOrient)
 
     -- Rename the object
     sim.setObjectName(path,name)
+
+    -- Return handle to path
     return path
 end
 
 function updatePickupPath(dummy)
+    -- Obtain handle to last pickupPath
     local path = sim.getObjectHandle("pickupPath")
+    -- Remove the path
     sim.removeObject(path)
+    -- Obtain position of dummy to be reached
     local dummyPos = sim.getObjectPosition(dummy,-1)
+    -- Obtain orientation of dummy to be reached
     local dummyOrient = sim.getObjectOrientation(dummy,-1)
- 
+    -- Return handle to new path
     return createPath("pickupPath",idlePos,idleOrient,dummyPos,dummyOrient)
 end
 

@@ -195,15 +195,15 @@ function createPath(name,startPoint,startOrient,endPoint,endOrient)
 end
 
 function updatePickupPath(dummy)
-      -- Obtain handle to last pickupPath
+    -- Obtain handle to last pickupPath
 --    local path = sim.getObjectHandle("pickupPath")
-      -- Remove the path
+    -- Remove the path
 --    sim.removeObject(path)
-      -- Obtain position of dummy to be reached
+    -- Obtain position of dummy to be reached
 --    local dummyPos = sim.getObjectPosition(dummy,-1)
-      -- Obtain orientation of dummy to be reached
+    -- Obtain orientation of dummy to be reached
 --    local dummyOrient = sim.getObjectOrientation(dummy,-1)
-      -- Return handle to new path
+    -- Return handle to new path
 --    return createPath("pickupPath",idlePos,idleOrient,dummyPos,dummyOrient)
 end
 
