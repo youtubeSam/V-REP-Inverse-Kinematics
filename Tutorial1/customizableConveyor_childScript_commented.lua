@@ -8,7 +8,7 @@ function sysCall_init()
 
     -- Get object and script handles
     forwarder=sim.getObjectHandle('customizableConveyor_forwarder')
---    textureShape=sim.getObjectHandle('customizableConveyor_tableTop')
+    textureShape=sim.getObjectHandle('customizableConveyor_tableTop')
 
 --    proximity1 = sim.getObjectHandle("Proximity_sensor_belt2_1")
 --    proximity2 = sim.getObjectHandle("Proximity_sensor_belt2_2")

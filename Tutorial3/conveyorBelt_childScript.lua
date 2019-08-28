@@ -7,6 +7,7 @@ function sysCall_init()
     goodColor = {0.345,0.859,0.192}   
 
     -- Initialize auxiliary variables
+    T_last_inserted = 0
     deltaTime = 0
     hasStopped = false
     boxList = {}
@@ -84,19 +85,11 @@ function sysCall_sensing()
     -- Check if possible to insert an new box
     if (sim.getSimulationTime()-T_last_inserted > T_insert) and not hasStopped then
         insertBox()
-        T_last_inserted = sim.getSimulationTime()
     end
 
     -- If proximity sensor detects an object, stop the belt, stop inserting objects
     if res == 1 and not hasStopped then
-        if not boolList[1] then
-            local box = table.remove(boxList,1)
-            local boxDummy = table.remove(boxDummyList,1)
-            table.remove(boolList,1)
-
-            sim.removeObject(box)
-            sim.removeObject(boxDummy)
-        else
+        if boolList[1] then
             sim.setScriptSimulationParameter(sim.handle_self,"conveyorBeltVelocity",0)
             deltaTime = sim.getSimulationTime()-T_last_inserted
             hasStopped = true
@@ -109,6 +102,13 @@ function sysCall_sensing()
             sim.setScriptVariable("pickupDummy",robotScriptHandle,objs[2])
 	    -- Set a signal such that robot knows that object is available
             sim.setIntegerSignal("objectAvailable",1)
+        else
+            local box = table.remove(boxList,1)
+            local boxDummy = table.remove(boxDummyList,1)
+            table.remove(boolList,1)
+
+            sim.removeObject(box)
+            sim.removeObject(boxDummy)
         end
     end
 
