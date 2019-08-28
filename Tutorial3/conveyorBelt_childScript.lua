@@ -1,4 +1,4 @@
-lol function sysCall_init() 
+function sysCall_init() 
     -- User Parameters
     beltSpeed = 0.4
     T_insert = 1
