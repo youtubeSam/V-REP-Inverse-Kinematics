@@ -114,3 +114,12 @@ q5 0
 q6 +75
 q7 0
 
+--- Target Dummy
+POS:
+X -0.1
+Y -0.5
+Z +0.5
+ORIENT:
+X 180
+Y 0
+Z -90
