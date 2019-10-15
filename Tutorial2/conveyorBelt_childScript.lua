@@ -179,7 +179,7 @@ end
 
 function createPath(name,startPoint,startOrient,endPoint,endOrient)
     -- Create Path Object
-    local path = sim.createPath(1)
+    local path = sim.createPath(-1)
 
     -- Create buffer variables
     local buffer = {startPoint[1],startPoint[2],startPoint[3],startOrient[1],startOrient[2],startOrient[3], 1,0,0,0,0,
