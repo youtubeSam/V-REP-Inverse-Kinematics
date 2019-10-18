@@ -204,7 +204,7 @@ function updatePickupPath(dummy)
     -- Obtain orientation of dummy to be reached
 --    local dummyOrient = sim.getObjectOrientation(dummy,-1)
     -- Create new path
---    return createPath("pickupPath",idlePos,idleOrient,dummyPos,dummyOrient)
+--    createPath("pickupPath",idlePos,idleOrient,dummyPos,dummyOrient)
 end
 
 
