@@ -46,7 +46,7 @@ function sysCall_init()
 --    sim.setScriptVariable("releasePath",robotScriptHandle,releasePath)
 
     -- Create "Dummy Path" (will be removed)
---    path = sim.createPath(1);
+--    path = sim.createPath(-1);
 --    sim.setObjectName(path,"pickupPath")
 
 end
