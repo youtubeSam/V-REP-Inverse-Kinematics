@@ -23,6 +23,8 @@ function sysCall_threadmain()
         sim.wait(1)
 	-- Connect the connector to pickupDummy
         sim.setLinkDummy(connector,pickupDummy)
+    	-- Set link type
+        sim.setObjectInt32Parameter(connector,sim.dummyintparam_link_type,sim.dummy_linktype_dynamics_loop_closure)
 	-- Follow back the pickup path
         sim.followPath(target,path,3,1,-nominalVel,-nominalAcc)
 	-- Follow release path
